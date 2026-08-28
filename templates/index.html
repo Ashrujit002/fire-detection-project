@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Thermal Source Intelligence</title>
+
+  <link rel="preconnect" href="https://unpkg.com">
+  <link rel="stylesheet"
+        href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        crossorigin=""/>
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+<div class="app-shell">
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-mark">🔥</div>
+      <div>
+        <h1>Thermal Source Intelligence</h1>
+        <p>NASA FIRMS • Real Map • Hotspot Analysis</p>
+      </div>
+    </div>
+    <div class="live-pill"><span></span> LIVE DATA</div>
+  </header>
+
+  <section class="control-panel">
+    <div class="search-wrap">
+      <span class="search-icon">⌕</span>
+      <input id="placeSearch" placeholder="Search a city, district or place…" autocomplete="off">
+      <button id="searchBtn" class="ghost-btn">Search</button>
+    </div>
+
+    <label class="select-wrap">
+      <span>History</span>
+      <select id="days">
+        <option value="1">1 day</option>
+        <option value="3">3 days</option>
+        <option value="7">7 days</option>
+        <option value="14">14 days</option>
+        <option value="21">21 days</option>
+        <option value="30">30 days</option>
+      </select>
+    </label>
+
+    <button id="loadBtn" class="primary-btn">Analyze area</button>
+    <button id="locateBtn" class="ghost-btn">📍 Use map point</button>
+    <span id="status">Choose a place or click the map.</span>
+  </section>
+
+  <section id="searchResults" class="search-results hidden"></section>
+
+  <section class="stats">
+    <div class="stat-card">
+      <div class="stat-icon fire">🔥</div>
+      <div><span>Total hotspots</span><b id="total">0</b></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon danger">!</div>
+      <div><span>High risk</span><b id="high">0</b></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon warning">⚠</div>
+      <div><span>Medium risk</span><b id="medium">0</b></div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-icon safe">✓</div>
+      <div><span>Low risk</span><b id="low">0</b></div>
+    </div>
+  </section>
+
+  <main class="workspace">
+    <section class="map-card">
+      <div id="map"></div>
+      <div class="map-hint">Click anywhere on the map to choose an analysis location.</div>
+      <div id="selectionBadge" class="selection-badge hidden"></div>
+    </section>
+
+    <aside id="detailsPanel" class="details-panel">
+      <button id="closeDetails" class="close-btn" aria-label="Close details">×</button>
+
+      <div id="emptyState" class="empty-state">
+        <div class="empty-icon">🔥</div>
+        <h2>Select a hotspot</h2>
+        <p>Tap a hotspot marker to open its detailed analysis here.</p>
+        <div class="mini-tip">Real NASA FIRMS data • Interactive OpenStreetMap</div>
+      </div>
+
+      <div id="hotspotDetails" class="hidden"></div>
+    </aside>
+  </main>
+
+  <footer>
+    <span>Data: NASA FIRMS VIIRS</span>
+    <span>Map: OpenStreetMap contributors</span>
+    <span>Risk: prototype heuristic</span>
+  </footer>
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        crossorigin=""></script>
+<script src="/static/app.js"></script>
+</body>
+</html>
