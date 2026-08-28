@@ -60,6 +60,7 @@ http://127.0.0.1:6969
 - Shows FRP, confidence, date, time, satellite and brightness information.
 - Calculates a transparent prototype risk score.
 - Counts high/medium/low risk hotspots.
+- for retrain model ->   python train_model.py
 
 ## What it does NOT do yet
 
@@ -67,5 +68,6 @@ http://127.0.0.1:6969
 - It does not train a real ML classifier.
 - It does not prove the cause of a hotspot.
 - It does not provide emergency/fire-service decisions.
+
 
 Those are the next development stages.
