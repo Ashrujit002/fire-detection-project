@@ -12,12 +12,6 @@ Python 3.10+ recommended.
 
 Windows:
 
-```powershell
-cd firms_thermal_prototype
-python -m venv .venv
-.venv\Scripts\activate
-pip install -r requirements.txt
-```
 
 ## 2. Get a free NASA FIRMS MAP_KEY
 
@@ -27,29 +21,9 @@ https://firms.modaps.eosdis.nasa.gov/api/map_key/
 
 Enter your email and NASA will send your MAP_KEY.
 
-## 3. Configure the key
 
-PowerShell:
 
-```powershell
-$env:FIRMS_MAP_KEY="YOUR_KEY_HERE"
-```
-
-Command Prompt:
-
-```cmd
-set FIRMS_MAP_KEY=YOUR_KEY_HERE
-```
-
-Do NOT put your real key into a public GitHub repository.
-
-## 4. Run
-
-```powershell
-python app.py
-```
-
-Open:
+## Open:
 
 http://127.0.0.1:6969
 
